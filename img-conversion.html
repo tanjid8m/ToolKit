@@ -3,8 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Converter | Convert JPG, PNG, WebP, GIF</title>
-    <meta name="description" content="Free online tool to convert images between JPG, PNG, WebP, and GIF formats. No installation required.">
+    <meta name="description" content="Free online image converter & compressor. Convert JPG, PNG, WebP, GIF & compress images with adjustable quality. No registration needed.">
+    <meta name="keywords" content="image converter, compress images, JPG to PNG, PNG to WebP, reduce image size, optimize images">
+    <meta name="author" content="ImageToolKit">
+    <meta property="og:title" content="Free Image Converter & Compressor">
+    <meta property="og:description" content="Convert & compress images online. Reduce file size without losing quality.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yoursite.com/image-converter">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yoursite.com/image-converter">
+    <title>Image Converter & Compressor | JPG, PNG, WebP, GIF | Free Online Tool</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Google AdSense (Replace with your own Ad Unit ID) -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID" crossorigin="anonymous"></script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Image Converter & Compressor",
+      "url": "https://yoursite.com/image-converter",
+      "description": "Free online tool to convert and compress images between JPG, PNG, WebP, and GIF formats.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    
     <style>
         :root {
             --primary: #4361ee;
@@ -38,11 +71,14 @@
             padding: 0 20px;
         }
 
+        /* Header */
         header {
             background-color: white;
             box-shadow: var(--box-shadow);
             padding: 20px 0;
-            margin-bottom: 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .header-content {
@@ -62,12 +98,29 @@
             color: var(--secondary);
         }
 
+        /* Ad Container */
+        .ad-container {
+            background-color: #f0f2f5;
+            padding: 8px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .ad-label {
+            font-size: 12px;
+            color: var(--gray);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        /* Tool Container */
         .tool-container {
             background-color: white;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             padding: 30px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .tool-header {
@@ -95,17 +148,11 @@
             cursor: pointer;
             transition: var(--transition);
             margin-bottom: 30px;
-            position: relative;
         }
 
         .upload-area:hover {
             border-color: var(--primary);
             background-color: rgba(67, 97, 238, 0.05);
-        }
-
-        .upload-area.active {
-            border-color: var(--secondary);
-            background-color: rgba(63, 55, 201, 0.05);
         }
 
         .upload-area i {
@@ -154,6 +201,37 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .slider {
+            flex: 1;
+            -webkit-appearance: none;
+            height: 8px;
+            border-radius: 4px;
+            background: #ddd;
+            outline: none;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+        }
+
+        .slider-value {
+            min-width: 40px;
+            text-align: center;
+            font-weight: bold;
         }
 
         select {
@@ -216,17 +294,7 @@
             margin-top: 15px;
         }
 
-        .file-info {
-            background-color: var(--light);
-            padding: 15px;
-            border-radius: var(--border-radius);
-            margin-bottom: 20px;
-        }
-
-        .file-info p {
-            margin-bottom: 5px;
-        }
-
+        /* Footer */
         footer {
             background-color: var(--dark);
             color: white;
@@ -257,6 +325,7 @@
             font-size: 14px;
         }
 
+        /* Responsive Adjustments */
         @media (max-width: 768px) {
             .result-grid {
                 grid-template-columns: 1fr;
@@ -281,16 +350,17 @@
             }
         }
     </style>
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="container header-content">
-            <a href="/" class="logo">Image<span>Converter</span></a>
+            <a href="/" class="logo">Image<span>ToolKit</span></a>
             <nav>
                 <ul class="footer-links">
                     <li><a href="/">Home</a></li>
-                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
                     <li><a href="#faq">FAQ</a></li>
                 </ul>
             </nav>
@@ -298,10 +368,25 @@
     </header>
 
     <main class="container">
+        <!-- Top Ad Banner -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <!-- Google AdSense Banner Ad -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                 data-ad-slot="YOUR_AD_SLOT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
         <div class="tool-container">
             <div class="tool-header">
-                <h1>Image Format Converter</h1>
-                <p>Convert between JPG, PNG, WebP, and GIF formats with just a few clicks. All processing happens in your browser.</p>
+                <h1>Image Converter & Compressor</h1>
+                <p>Convert between JPG, PNG, WebP, and GIF formats while optimizing file size. No registration required.</p>
             </div>
             
             <div class="upload-area" id="dropArea">
@@ -313,16 +398,9 @@
                 <p class="supported-formats">Supports: JPG, PNG, WebP, GIF</p>
             </div>
             
-            <div class="file-info" id="fileInfo" style="display: none;">
-                <p><strong>File name:</strong> <span id="fileName"></span></p>
-                <p><strong>Original format:</strong> <span id="originalFormat"></span></p>
-                <p><strong>File size:</strong> <span id="fileSize"></span></p>
-                <p><strong>Dimensions:</strong> <span id="imageDimensions"></span></p>
-            </div>
-            
             <div class="controls">
                 <div class="control-group">
-                    <label for="outputFormat">Convert To</label>
+                    <label for="outputFormat">Output Format</label>
                     <select id="outputFormat">
                         <option value="jpeg">JPEG (Best for photos)</option>
                         <option value="png">PNG (Best for transparency)</option>
@@ -331,21 +409,22 @@
                     </select>
                 </div>
                 
-                <div class="control-group" id="qualityControl" style="display: none;">
-                    <label for="quality">Quality</label>
+                <div class="control-group">
+                    <label for="compressionLevel">Compression Level</label>
                     <div class="slider-container">
-                        <input type="range" min="1" max="100" value="80" class="slider" id="quality">
-                        <span class="slider-value" id="qualityValue">80%</span>
+                        <input type="range" min="0" max="100" value="70" class="slider" id="compressionLevel">
+                        <span class="slider-value" id="compressionValue">70%</span>
                     </div>
+                    <small>Higher values reduce file size but may lower quality</small>
                 </div>
             </div>
             
-            <button class="btn" id="convertBtn" style="display: none; width: 100%;">Convert Image</button>
+            <button class="btn" id="convertBtn" style="display: none; width: 100%;">Convert & Compress</button>
             
             <div class="spinner" id="loadingSpinner"></div>
             
             <div class="results" id="resultsContainer">
-                <h2>Conversion Results</h2>
+                <h2>Results</h2>
                 <div class="result-grid">
                     <div class="result-card">
                         <h3>Original Image</h3>
@@ -353,11 +432,11 @@
                         <div class="result-stats">
                             <div>
                                 <strong>Format:</strong> 
-                                <span id="originalFormatResult"></span>
+                                <span id="originalFormat"></span>
                             </div>
                             <div>
                                 <strong>Size:</strong> 
-                                <span id="originalSizeResult"></span>
+                                <span id="originalSize"></span>
                             </div>
                         </div>
                     </div>
@@ -368,11 +447,11 @@
                         <div class="result-stats">
                             <div>
                                 <strong>Format:</strong> 
-                                <span id="convertedFormatResult"></span>
+                                <span id="convertedFormat"></span>
                             </div>
                             <div>
                                 <strong>Size:</strong> 
-                                <span id="convertedSizeResult"></span>
+                                <span id="convertedSize"></span>
                             </div>
                         </div>
                         <a href="#" id="downloadBtn" class="btn download-btn">
@@ -382,33 +461,43 @@
                 </div>
             </div>
         </div>
-        
-        <section id="features" class="tool-container">
-            <h2>Features</h2>
-            <ul style="list-style-position: inside; margin-top: 15px; line-height: 2;">
-                <li>Convert between JPG, PNG, WebP, and GIF formats</li>
-                <li>Adjust quality settings for optimal results</li>
-                <li>100% client-side processing - your images never leave your computer</li>
-                <li>Fast conversion with no file size limits</li>
-                <li>No registration or watermarks</li>
-                <li>Works on all devices including mobile</li>
-            </ul>
+
+        <!-- Middle Ad Banner -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <!-- Google AdSense Rectangle Ad -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                 data-ad-slot="YOUR_AD_SLOT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <section id="how-it-works" class="tool-container">
+            <h2>How It Works</h2>
+            <ol style="margin-top: 15px; line-height: 2;">
+                <li><strong>Upload an image</strong> (drag & drop or click "Select Image")</li>
+                <li><strong>Choose output format</strong> (JPG, PNG, WebP, or GIF)</li>
+                <li><strong>Adjust compression level</strong> (balance quality vs. file size)</li>
+                <li><strong>Download the optimized image</strong> (no watermarks, no registration)</li>
+            </ol>
         </section>
-        
+
         <section id="faq" class="tool-container">
             <h2>Frequently Asked Questions</h2>
             <div style="margin-top: 20px;">
-                <h3 style="margin: 15px 0 5px;">Is this service free to use?</h3>
-                <p>Yes, our image converter is completely free with no hidden charges or watermarks.</p>
+                <h3 style="margin: 15px 0 5px;">Is this tool free?</h3>
+                <p>Yes! Our image converter and compressor is 100% free with no hidden costs.</p>
                 
                 <h3 style="margin: 15px 0 5px;">Are my images uploaded to a server?</h3>
-                <p>No, all processing happens directly in your browser. Your images never leave your computer.</p>
+                <p>No, all processing happens in your browser. Your images never leave your device.</p>
                 
-                <h3 style="margin: 15px 0 5px;">What's the maximum image size I can convert?</h3>
-                <p>There's no strict limit, but very large images (above 20MP) may take longer to process.</p>
-                
-                <h3 style="margin: 15px 0 5px;">Which format should I choose?</h3>
-                <p>JPEG for photos, PNG for images with transparency, WebP for web optimization, and GIF for animations.</p>
+                <h3 style="margin: 15px 0 5px;">What's the best format for web use?</h3>
+                <p><strong>WebP</strong> offers the best compression with high quality. <strong>JPEG</strong> is widely compatible, while <strong>PNG</strong> supports transparency.</p>
             </div>
         </section>
     </main>
@@ -421,7 +510,7 @@
                 <a href="/contact">Contact Us</a>
             </div>
             <div class="copyright">
-                &copy; <span id="year"></span> ImageConverter. All rights reserved.
+                &copy; <span id="year"></span> ImageToolKit. All rights reserved.
             </div>
         </div>
     </footer>
@@ -435,27 +524,19 @@
         const selectFilesBtn = document.getElementById('selectFilesBtn');
         const dropArea = document.getElementById('dropArea');
         const outputFormat = document.getElementById('outputFormat');
-        const qualitySlider = document.getElementById('quality');
-        const qualityValue = document.getElementById('qualityValue');
+        const compressionSlider = document.getElementById('compressionLevel');
+        const compressionValue = document.getElementById('compressionValue');
         const convertBtn = document.getElementById('convertBtn');
         const loadingSpinner = document.getElementById('loadingSpinner');
         const resultsContainer = document.getElementById('resultsContainer');
-        const fileInfo = document.getElementById('fileInfo');
-        const qualityControl = document.getElementById('qualityControl');
-        
-        // File info elements
-        const fileName = document.getElementById('fileName');
-        const originalFormat = document.getElementById('originalFormat');
-        const fileSize = document.getElementById('fileSize');
-        const imageDimensions = document.getElementById('imageDimensions');
         
         // Result elements
         const originalImage = document.getElementById('originalImage');
         const convertedImage = document.getElementById('convertedImage');
-        const originalFormatResult = document.getElementById('originalFormatResult');
-        const originalSizeResult = document.getElementById('originalSizeResult');
-        const convertedFormatResult = document.getElementById('convertedFormatResult');
-        const convertedSizeResult = document.getElementById('convertedSizeResult');
+        const originalFormat = document.getElementById('originalFormat');
+        const originalSize = document.getElementById('originalSize');
+        const convertedFormat = document.getElementById('convertedFormat');
+        const convertedSize = document.getElementById('convertedSize');
         const downloadBtn = document.getElementById('downloadBtn');
         
         // Variables
@@ -465,8 +546,7 @@
         // Event listeners
         selectFilesBtn.addEventListener('click', () => fileInput.click());
         fileInput.addEventListener('change', handleFileSelect);
-        outputFormat.addEventListener('change', updateQualityControlVisibility);
-        qualitySlider.addEventListener('input', updateQualityValue);
+        compressionSlider.addEventListener('input', updateCompressionValue);
         convertBtn.addEventListener('click', convertImage);
         
         // Drag and drop events
@@ -515,94 +595,51 @@
             }
             
             originalFile = file;
-            displayFileInfo(file);
             previewOriginalImage(file);
-            
-            // Show convert button and hide results
             convertBtn.style.display = 'block';
             resultsContainer.style.display = 'none';
-        }
-        
-        function displayFileInfo(file) {
-            fileName.textContent = file.name;
-            
-            // Get file format
-            const format = file.name.split('.').pop().toLowerCase();
-            originalFormat.textContent = format.toUpperCase();
-            
-            // Get file size
-            fileSize.textContent = formatFileSize(file.size);
-            
-            // Get image dimensions
-            const img = new Image();
-            img.onload = function() {
-                imageDimensions.textContent = `${this.width} × ${this.height} pixels`;
-            };
-            img.src = URL.createObjectURL(file);
-            
-            // Show file info
-            fileInfo.style.display = 'block';
         }
         
         function previewOriginalImage(file) {
             const reader = new FileReader();
             reader.onload = function(e) {
                 originalImage.src = e.target.result;
+                originalFormat.textContent = file.name.split('.').pop().toUpperCase();
+                originalSize.textContent = formatFileSize(file.size);
             };
             reader.readAsDataURL(file);
         }
         
-        function updateQualityControlVisibility() {
-            // Show quality control for formats that support it
-            const format = outputFormat.value;
-            qualityControl.style.display = (format === 'jpeg' || format === 'webp') ? 'block' : 'none';
-        }
-        
-        function updateQualityValue() {
-            qualityValue.textContent = `${qualitySlider.value}%`;
+        function updateCompressionValue() {
+            compressionValue.textContent = `${compressionSlider.value}%`;
         }
         
         function convertImage() {
             if (!originalFile) return;
             
-            // Show loading spinner and hide results
             loadingSpinner.style.display = 'block';
             resultsContainer.style.display = 'none';
             
             const format = outputFormat.value;
-            const quality = qualitySlider.value / 100;
+            const quality = compressionSlider.value / 100;
             
             const img = new Image();
             img.onload = function() {
-                // Create canvas
                 const canvas = document.createElement('canvas');
                 canvas.width = img.width;
                 canvas.height = img.height;
                 const ctx = canvas.getContext('2d');
-                
-                // Draw image on canvas
                 ctx.drawImage(img, 0, 0);
                 
-                // Convert to selected format
                 let mimeType;
                 switch (format) {
-                    case 'jpeg':
-                        mimeType = 'image/jpeg';
-                        break;
-                    case 'png':
-                        mimeType = 'image/png';
-                        break;
-                    case 'webp':
-                        mimeType = 'image/webp';
-                        break;
-                    case 'gif':
-                        mimeType = 'image/gif';
-                        break;
-                    default:
-                        mimeType = 'image/jpeg';
+                    case 'jpeg': mimeType = 'image/jpeg'; break;
+                    case 'png': mimeType = 'image/png'; break;
+                    case 'webp': mimeType = 'image/webp'; break;
+                    case 'gif': mimeType = 'image/gif'; break;
+                    default: mimeType = 'image/jpeg';
                 }
                 
-                // Convert to blob
                 canvas.toBlob((blob) => {
                     loadingSpinner.style.display = 'none';
                     
@@ -612,36 +649,26 @@
                     }
                     
                     convertedBlob = blob;
-                    displayConversionResults(originalFile, blob, format);
+                    displayResults(blob, format);
                     
-                }, mimeType, format === 'jpeg' || format === 'webp' ? quality : 1);
+                }, mimeType, format === 'gif' ? 1 : quality);
             };
             
             img.src = URL.createObjectURL(originalFile);
         }
         
-        function displayConversionResults(originalFile, convertedBlob, format) {
-            // Display original file info
-            originalFormatResult.textContent = originalFile.name.split('.').pop().toUpperCase();
-            originalSizeResult.textContent = formatFileSize(originalFile.size);
+        function displayResults(blob, format) {
+            convertedFormat.textContent = format.toUpperCase();
+            convertedSize.textContent = formatFileSize(blob.size);
             
-            // Display converted file info
-            convertedFormatResult.textContent = format.toUpperCase();
-            convertedSizeResult.textContent = formatFileSize(convertedBlob.size);
-            
-            // Show converted image
-            const convertedUrl = URL.createObjectURL(convertedBlob);
+            const convertedUrl = URL.createObjectURL(blob);
             convertedImage.src = convertedUrl;
             
-            // Set up download button
             const newFilename = originalFile.name.replace(/\.[^/.]+$/, '') + '_converted.' + format;
             downloadBtn.href = convertedUrl;
             downloadBtn.download = newFilename;
             
-            // Show results
             resultsContainer.style.display = 'block';
-            
-            // Scroll to results
             resultsContainer.scrollIntoView({ behavior: 'smooth' });
         }
         
@@ -651,9 +678,8 @@
             else return (bytes / 1048576).toFixed(1) + ' MB';
         }
         
-        // Initialize quality control visibility
-        updateQualityControlVisibility();
-        updateQualityValue();
+        // Initialize compression value display
+        updateCompressionValue();
     </script>
 </body>
 </html>
